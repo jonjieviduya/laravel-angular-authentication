@@ -23,7 +23,7 @@ return [
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['Content-type', 'X-Auth-Token', 'Authorization', 'Origin'], //['*'],
 
     'exposed_headers' => [],
 

@@ -1,1 +1,45 @@
-<p>signup works!</p>
+<div class="mt-4 col-8 offset-2">
+    <div class="card">
+          <div class="card-header">Sign Up</div>
+          <div class="card-body">
+                <form #signupForm=ngForm (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <label for="exampleInputName1" class="col-sm-2">Name</label>
+                        <input type="email" name="name" class="form-control col-sm-10" [(ngModel)]="form.name" required>
+                        <small class="form-text text-muted" [hidden]="!error.name">
+                            {{ error.name }}
+                        </small>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1" class="col-sm-2">Email</label>
+                        <input type="email" name="email" class="form-control col-sm-10" [(ngModel)]="form.email" required>
+                        <small class="form-text text-muted" [hidden]="!error.email">
+                            {{ error.email }}
+                        </small>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-2">Password</label>
+                        <input type="password" name="password" class="form-control col-sm-10" [(ngModel)]="form.password" required>
+                        <small class="form-text text-muted" [hidden]="!error.password">
+                            {{ error.password }}
+                        </small>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputPasswordConfirmation1" class="col-sm-2">Confirm Password</label>
+                        <input type="password" name="password_confirmation" class="form-control col-sm-10" [(ngModel)]="form.password_confirmation" required>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-10 offset-2">
+                            <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">
+                                Sign Up
+                            </button>
+                            <a routerLink="/login" class="btn btn-light float-right">
+                                Sign In
+                            </a>
+                        </div>
+                    </div>
+                </form>
+          </div>
+    </div>
+</div>
